@@ -16,13 +16,15 @@ struct LoginView: View {
         NavigationView {
             VStack{
                 // Header
-                HeaderView()
+                HeaderView(title: "To Do List",
+                           subtitle: "Get Thing done", angle: 15,
+                           background: .pink)
                 
                 // Login Form
                 Form {
                     TextField("Email Adress", text: $email)
                         .textFieldStyle(DefaultTextFieldStyle())
-                    TextField("Password", text: $password)
+                    SecureField("Password", text: $password)
                         .textFieldStyle(DefaultTextFieldStyle())
                     Button {
                         // Attempt log in
